@@ -1,0 +1,448 @@
+/* Globales */
+
+html,
+body {
+    margin: 0px;
+    height: 100%;
+    background-color: #eee;
+}
+
+.actived {
+    border-bottom: 4px solid #84BD00;
+    padding-bottom: 4px;
+}
+
+
+/* Contenido principal o central */
+
+
+/* .central {
+    height: 100%;
+    overflow-y: scroll;
+} */
+
+.bienvenida {
+    overflow-y: hidden;
+}
+
+.formMisDatos {
+    padding-bottom: 180px;
+}
+
+
+/* Formularios iniciales */
+
+.formulariosIniciales {
+    margin-bottom: 20px;
+}
+
+
+/* Sección Navegación Principal */
+
+.padre {
+    display: flex;
+    justify-content: space-around;
+}
+
+.padre section {
+    width: 40%;
+}
+
+.contenidoPrincipal {
+    display: flex;
+    /* position: relative; */
+}
+
+.contenidoPrincipal__titulo {
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 20px 20px;
+    display: block;
+    text-decoration: none;
+}
+
+.contenidoPrincipal__titulo:hover {
+    text-decoration: none;
+}
+
+
+/* Barra lateral */
+
+.navigation {
+    background-color: #1C1C1F;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    min-width: 200px;
+}
+
+.navigation__link {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+    text-decoration: none;
+    color: #ddd;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.navigation__link:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation__link .bi {
+    width: 40px;
+    padding-left: 13px;
+}
+
+
+/* Sección Usuario Registrado */
+
+#user_logged {
+    background-color: #1C1C1F;
+    /* position: absolute; */
+    bottom: 0px;
+    border-top: 2px solid #444;
+    margin-left: 13px;
+    padding: 15px 0;
+}
+
+.user_logged__element {
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    color: #ddd;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.user_logged__element:nth-child(2) {
+    text-align: center;
+}
+
+.userImage {
+    background-color: #eee;
+    border-radius: 100px;
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+#image-logged {
+    width: 100px;
+}
+
+.user_logged__element:last-child {
+    cursor: pointer;
+}
+
+.user_logged__element:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* Artistas */
+
+.image_for_edit img {
+    width: 200px;
+}
+
+
+/* Mostrar artistas */
+
+.pagination {
+    display: flex;
+    margin: 30px;
+    justify-content: space-around;
+}
+
+.pagination li a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #444;
+    border-radius: 15px;
+    padding: 13px 18px;
+}
+
+.pagination li a:hover {
+    background-color: #222326;
+}
+
+.artist-list,
+.album-list {
+    display: flex;
+    list-style: none;
+    margin-top: 30px;
+    min-height: 500px;
+    flex-wrap: wrap;
+}
+
+.artist-item,
+.album-item {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    flex: 0 0 calc(25% - 10px);
+    background-color: #222326;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.artist-item {
+    height: 320px;
+}
+
+.album-item {
+    height: 360px;
+}
+
+.artist-image,
+.album-image {
+    height: 165px;
+    overflow: hidden;
+}
+
+.artist-image img,
+.album-image img {
+    width: 100%;
+    min-height: 150px;
+}
+
+.artist-name,
+.album-name {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #fff;
+}
+
+.album-name {
+    display: block;
+}
+
+.artist-name p,
+.album-name p {
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.buttons-artist,
+.buttons-album {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    margin-top: 25px;
+}
+
+.buttons-album {
+    margin-top: 0px;
+}
+
+.buttons a {
+    font-size: 18px;
+}
+
+
+/* Detalles artista */
+
+#artist-head-card {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#artist-head-card .image {
+    flex-basis: calc(30%);
+    margin-top: 20px;
+    width: 250px;
+}
+
+#artist-head-card .image img {
+    width: 100%;
+    height: 100%;
+}
+
+#artist-head-card .data {
+    flex-basis: calc(65%);
+    margin-top: 20px;
+}
+
+#artist-head-card .data h1 {
+    text-transform: capitalize;
+}
+
+#artist-head-card .data .description {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+
+/* Detalles album */
+
+#gallery-albums {
+    padding-bottom: 150px;
+}
+
+#album-head-card {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#album-head-card .image {
+    width: 350px;
+    margin-top: 25px;
+    margin-left: 50px;
+}
+
+#album-head-card .image img {
+    width: 100%;
+    overflow: hidden;
+}
+
+#album-head-card .data {
+    margin-top: 18px;
+    margin-left: 25px;
+}
+
+#album-head-card .data h1 {
+    text-transform: capitalize;
+}
+
+#album-head-card .data p {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+
+/* Eliminar artista y album */
+
+.seguro-artist,
+.seguro-album {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: -38px;
+    margin-right: 7px;
+    background-color: #222326;
+}
+
+.seguro a {
+    font-size: 18px;
+    padding: 10px 18px;
+}
+
+
+/* Canciones */
+
+#gallery-songs {
+    margin-top: 25px;
+    padding-bottom: 180px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+#song-list {
+    margin: 0;
+    padding: 0;
+}
+
+.song-item {
+    list-style: none;
+    border-bottom: 2px double #ccc;
+    margin: 10px;
+}
+
+.contenido-song {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.contenido-song a {
+    margin-right: 15px;
+}
+
+.contenido-song a svg {
+    margin: 0px 5px;
+}
+
+.buttons-song a:first-child {
+    margin-right: 10px;
+}
+
+.buttons-eliminar {
+    margin-top: -38px;
+    margin-right: 5px;
+}
+
+.buttons-eliminar a {
+    padding: 8px 10px;
+}
+
+
+/* Reproductor */
+
+.player {
+    display: flex;
+    background-color: #1C1C1F;
+    position: fixed;
+    width: 90%;
+    height: 150px;
+    bottom: 0;
+    padding: 20px;
+    margin-left: -15px;
+    border-left: 1px solid #444;
+    z-index: 10;
+}
+
+.player .album-image {
+    width: 140px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.player .album-image img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    object-fit: contain;
+}
+
+.player .audio-file {
+    width: 72%;
+    height: 45px;
+}
+
+.player .audio-file p {
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+}
+
+.player .audio-file audio {
+    width: 100%;
+    height: 45px;
+    margin-top: 10px;
+}
+
+#play-image-album {
+    width: 200px;
+}
+
+#play-song-artist,
+#play-song-title {
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    text-transform: capitalize;
+    margin-right: 5px;
+}

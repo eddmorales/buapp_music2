@@ -1,0 +1,55 @@
+<section *ngIf="artist" class="artist-box">
+
+    <div id="artist-head-card">
+        <div class="image">
+            <img src="{{ url + 'get-image-artist/' + artist.image }}" alt="Imagen del artista" *ngIf="artist.image && artist.image != 'null'">
+        </div>
+        <div class="data">
+            <h1>{{ artist.name }}</h1>
+            <p class="description">{{ artist.description }}</p>
+
+            <a [routerLink]="['/crear-album', artist._id]" class="btn btn-info" *ngIf="identity.role == 'ROLE_ADMIN'"> Añadir album</a>
+        </div>
+    </div>
+
+    <div id="gallery-albums" *ngIf="albums">
+        <!-- Listar los albums -->
+        <ul class="album-list">
+            <li *ngFor="let album of albums" class="album-item">
+                <div class="album-image">
+                    <img src="{{url + 'get-image-album/' + album.image}}" alt="Imagen album">
+                </div>
+                <div class="album-name">
+                    <p>
+                        <a [routerLink]="['/album', album._id]">
+                            {{album.title}}
+                        </a>
+                    </p>
+                    <p>
+                        {{album.year}}
+                        <!-- <a [routerLink]="['/artist', album.artist._id] ">
+                            {{album.artist.name}}
+                        </a> -->
+                    </p>
+                </div>
+
+                <div class="buttons-album" *ngIf="identity.role == 'ROLE_ADMIN'">
+                    <a [routerLink]="['/editar-album', album._id]" class="btn btn-warning">Editar</a>
+                    <a (click)="onDeleteConfirm(album._id)" class="btn btn-danger">Eliminar</a>
+                </div>
+
+                <div class="seguro-album" *ngIf="confirmado == album._id">
+                    <a (click)="onDeleteAlbum(album._id)" class="btn btn-danger">Eliminar</a>
+
+                    <a (click)="onCancelAlbum()" class="btn btn-info">Cancelar</a>
+                </div>
+            </li>
+        </ul>
+        <div *ngIf="alertMessage">
+            <div class="alert alert-info">
+                {{ alertMessage }}
+            </div>
+        </div>
+    </div>
+
+</section>
