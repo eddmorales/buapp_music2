@@ -1,6 +1,6 @@
 <div class="col-lg-6" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
 
-    <h1>{{titulo}}</h1>
+    <h1 class="titulo-editar-album">{{titulo}}</h1>
 
     <div *ngIf="alertMessage">
         <div class="alert alert-info">
@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <form #formAlbum="ngForm" (ngSubmit)="onSubmit()">
+    <form #formAlbum="ngForm" (ngSubmit)="onSubmit()" class="formAlbumEdit">
         <p>
             <label>Titulo:</label>
             <input type="text" #title="ngModel" name="title" [(ngModel)]="album.title" required class="form-control">

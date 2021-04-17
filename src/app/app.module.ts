@@ -20,11 +20,14 @@ import { ArtistDetailComponent } from './components/artist-detail.component';
 import { AlbumAddComponent } from './components/album-add.component';
 import { AlbumEditComponent } from './components/album-edit.component';
 import { AlbumDetailComponent } from './components/album-detail.component';
+import { AlbumListComponent } from './components/album-list.component';
 // Song
 import { SongAddComponent } from './components/song-add.component';
 import { SongEditComponent } from './components/song-edit.component';
+import { SongListComponent } from './components/song-list.component';
 // Player
 import { PlayerComponent} from './components/player.component';
+
 
 
 
@@ -44,8 +47,10 @@ import { PlayerComponent} from './components/player.component';
     AlbumAddComponent,
     AlbumEditComponent,
     AlbumDetailComponent,
+    AlbumListComponent,
     SongAddComponent,
     SongEditComponent,
+    SongListComponent,
     PlayerComponent
   ],
   imports: [

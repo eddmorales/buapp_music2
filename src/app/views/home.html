@@ -4,6 +4,16 @@
         <p class="lead">Descubre todo tipo de música y artistas.</p>
         <hr class="my-4">
         <p>Busca cualquier artista, canción o album que desees escuchar.</p>
-        <a class="btn btn-primary btn-lg" [routerLink]="['/artistas', 1]" role="button">Ver Artistas</a>
+        <div class="botones-secciones">
+            <div class="boton-artista">
+                <a class="btn btn-primary btn-lg" [routerLink]="['/artistas', 1]" role="button">Ver Artistas</a>
+            </div>
+            <div class="boton-album">
+                <a class="btn btn-primary btn-lg" [routerLink]="['/albums']" role="button">Ver Albums</a>
+            </div>
+            <div class="boton-cancion">
+                <a class="btn btn-primary btn-lg" [routerLink]="['/songs']" role="button">Ver Canciones</a>
+            </div>
+        </div>
     </div>
 </section>

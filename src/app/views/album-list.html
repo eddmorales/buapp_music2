@@ -1,0 +1,38 @@
+<h1 class="titulo-secciones-ac">Escucha los mejores Albums. Solo aqui!</h1>
+
+<div id="gallery-albums" *ngIf="albums">
+    <!-- Listar los albums -->
+    <ul class="album-list">
+        <li *ngFor="let album of albums" class="album-item">
+            <div class="album-image">
+                <img src="{{url + 'get-image-album/' + album.image}}" alt="Imagen album">
+            </div>
+            <div class="album-name">
+                <p>
+                    <a [routerLink]="['/album', album._id]">
+                            {{album.title}}
+                        </a>
+                </p>
+                <p>
+                    {{album.year}}
+                </p>
+            </div>
+
+            <div class="buttons-album" *ngIf="identity.role == 'ROLE_ADMIN'">
+                <a [routerLink]="['/editar-album', album._id]" class="btn btn-warning">Editar</a>
+                <a (click)="onDeleteConfirm(album._id)" class="btn btn-danger">Eliminar</a>
+            </div>
+
+            <div class="seguro-album" *ngIf="confirmado == album._id">
+                <a (click)="onDeleteAlbum(album._id)" class="btn btn-danger">Eliminar</a>
+
+                <a (click)="onCancelAlbum()" class="btn btn-info">Cancelar</a>
+            </div>
+        </li>
+    </ul>
+    <div *ngIf="alertMessage">
+        <div class="alert alert-info">
+            {{ alertMessage }}
+        </div>
+    </div>
+</div>

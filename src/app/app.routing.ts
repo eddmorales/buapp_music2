@@ -15,10 +15,13 @@ import { ArtistDetailComponent } from './components/artist-detail.component';
 import { AlbumAddComponent } from './components/album-add.component';
 import { AlbumEditComponent } from './components/album-edit.component';
 import { AlbumDetailComponent } from './components/album-detail.component';
+import { AlbumListComponent } from './components/album-list.component';
 
 // imports song
 import { SongAddComponent } from './components/song-add.component';
 import { SongEditComponent } from './components/song-edit.component';
+import { SongListComponent } from './components/song-list.component';
+
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -29,6 +32,8 @@ const appRoutes: Routes = [
     { path: 'crear-album/:artist', component: AlbumAddComponent },
     { path: 'editar-album/:id', component: AlbumEditComponent },
     { path: 'album/:id', component: AlbumDetailComponent },
+    { path: 'albums', component: AlbumListComponent },
+    { path: 'songs', component: SongListComponent },
     { path: 'crear-tema/:album', component: SongAddComponent },
     { path: 'editar-tema/:id', component: SongEditComponent },
     { path: 'mis-datos', component: UserEditComponent },

@@ -36,6 +36,18 @@ body {
     margin-bottom: 20px;
 }
 
+.botones-secciones {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.titulo-secciones-ac {
+    padding: 15px 0;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+}
+
 
 /* Sección Navegación Principal */
 
@@ -128,6 +140,7 @@ body {
     background-color: #eee;
     border-radius: 100px;
     width: 100px;
+    height: 100px;
     margin: 0 auto;
     margin-top: 10px;
     overflow: hidden;
@@ -320,6 +333,15 @@ body {
 #album-head-card .data p {
     font-size: 20px;
     text-transform: capitalize;
+}
+
+.formAlbumEdit {
+    padding-top: 20px;
+    padding-bottom: 200px;
+}
+
+.titulo-editar-album {
+    margin-top: 20px;
 }
 
 

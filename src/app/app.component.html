@@ -19,13 +19,13 @@
                     <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5v2z"/>
                 </svg> Artistas
             </a>
-            <a class="navigation__link" href="#">
+            <a class="navigation__link" [routerLink]="['/albums']" [routerLinkActive]="['actived']">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-music-player-fill" viewBox="0 0 16 16">
                     <path d="M8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                     <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm1 2h6a1 1 0 0 1 1 1v2.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm3 12a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
                 </svg> Albums
             </a>
-            <a class="navigation__link" href="#">
+            <a class="navigation__link" [routerLink]="['/songs']" [routerLinkActive]="['actived']">
                 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-music-note" viewBox="0 0 16 16"> -->
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-music-note" viewBox="0 0 16 16">
                     <path d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
@@ -36,9 +36,13 @@
         </nav>
 
         <nav id="user_logged">
-            <div class="userImage">
+            <div class="userImage" *ngIf="!user.image">
+                <img id="image-logged" src="assets/imgs/avata.png" alt="Imagen de usuario">
+            </div>
+            <div class="userImage" *ngIf="user.image">
                 <img id="image-logged" src="{{url + 'get-image-user/' + identity.image}}" alt="Imagen de usuario">
             </div>
+
             <span class="user_logged__element" id="identity_name">
                 {{identity.name}}
             </span>
@@ -125,47 +129,3 @@
         </form>
     </section>
 </section>
-<!-- 
-<div class="col-lg-12" *ngIf="!identity">
-    <div class="col-lg-6">
-        <h1>Identificate</h1>
-
-        <form class="col-md-8">
-            <p>
-                <label>Correo electrónico</label>
-                <input type="text" class="form-control" required>
-            </p>
-            <p>
-                <label>Contraseña</label>
-                <input type="password" class="form-control" required>
-            </p>
-
-            <input type="submit" value="Entrar" class="btn btn-primary">
-        </form>
-    </div>
-
-    <div class="col-lg-6">
-        <h1>Registrate</h1>
-
-        <form class="col-md-8">
-            <p>
-                <label>Nombre</label>
-                <input type="text" class="form-control" required>
-            </p>
-            <p>
-                <label>Apellidos</label>
-                <input type="password" class="form-control" required>
-            </p>
-            <p>
-                <label>Correo electrónico</label>
-                <input type="password" class="form-control" required>
-            </p>
-            <p>
-                <label>Contraseña</label>
-                <input type="password" class="form-control" required>
-            </p>
-
-            <input type="submit" value="Registrar" class="btn btn-primary">
-        </form>
-    </div>
-</div> -->
